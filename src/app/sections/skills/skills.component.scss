@@ -1,0 +1,60 @@
+@use '../../../variables';
+
+.skills {
+  padding: 5vw 8vw;
+  color: variables.$bgc-dark;
+  min-height: 70vh;
+
+  h1 {
+    font-size: variables.$main-header;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .wrapper {
+
+    .skills-switch {
+      display: flex;
+      justify-content: center;
+
+      button {
+        padding: 5px 15px;
+        width: 100px;
+        font-size: 1.2rem;
+        color: #fff;
+        background-color: variables.$bgc-dark;
+        border: none;
+        margin: 0 2px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: lighten($color: variables.$bgc-dark, $amount: 20);
+      }
+
+      .active {
+        background-color: variables.$header-color;
+      }
+
+      .active:hover {
+        background-color: darken($color: variables.$header-color, $amount: 5);
+      }
+    }
+
+    div {
+      padding-bottom: variables.$padding-20;
+    }
+
+    h2 {
+      font-size: variables.$header-font-size;
+      color: variables.$header-color;
+      padding-bottom: variables.$header-padding;
+    }
+
+    li {
+      font-size: variables.$list-font-size;
+      padding-left: variables.$list-padding-left;
+      padding-bottom: variables.$list-padding-bot;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@use '../../../variables';
+
+.projects {
+  padding: 5vw 8vw;
+  color: #fff;
+
+  h1 {
+    font-size: variables.$main-header;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .wrapper {
+
+    div {
+      padding-bottom: variables.$padding-20;
+    }
+
+    h2 {
+      font-size: variables.$header-font-size;
+      color: variables.$header-color;
+      padding-bottom: variables.$header-padding;
+    }
+
+    h3 {
+      font-size: variables.$h3-font-size;
+      color: variables.$date-color;
+      padding-bottom: variables.$header-padding;
+    }
+
+    p {
+      color: variables.$date-color;
+      font-size: variables.$paragraph-font-size;
+    }
+
+    li {
+      font-size: variables.$list-font-size;
+      padding-left: variables.$list-padding-left;
+      padding-bottom: variables.$list-padding-bot;
+    }
+  }
+}

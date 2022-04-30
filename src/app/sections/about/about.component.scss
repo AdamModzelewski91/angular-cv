@@ -1,0 +1,28 @@
+@use '../../../variables';
+
+.about {
+  padding: variables.$padding;
+  color: variables.$bgc-dark;
+  
+  h1{
+    font-size: variables.$main-header;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .wrapper{
+
+    img{
+      width: 100%;
+    }
+
+    div{
+      padding-bottom: variables.$padding-20;
+    }
+
+    p{
+      color: variables.$bgc-dark;
+      font-size: variables.$list-font-size;
+    }    
+  }
+}

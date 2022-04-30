@@ -1,0 +1,29 @@
+@use '/src/variables';
+
+.nav {
+  background-color: variables.$bgc-dark;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: inline-block;
+      list-style: none;
+      text-align: center;
+      padding: 5px 0;
+      cursor: pointer;
+
+      &:hover {
+        background-color: lighten($color: variables.$bgc-dark, $amount: 10);
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

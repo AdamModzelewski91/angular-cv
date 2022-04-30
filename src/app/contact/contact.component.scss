@@ -1,0 +1,36 @@
+@use '/src/variables';
+
+.contact {
+  padding: variables.$padding;
+  color: variables.$bgc-dark;
+
+  h1 {
+    font-size: variables.$main-header;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .info {
+      display: flex;
+      align-items: center;
+      padding-bottom: variables.$padding-20;
+      width: 200px;
+
+      fa-icon {
+        padding-right: 20px;
+      }
+
+      h2 {
+        font-size: variables.$header-font-size;
+      }
+
+      p {
+        font-size: variables.$list-font-size;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<section class="skills">
+  <h1>Skills</h1>
+  <div class="wrapper">
+    <div class="skills-switch">
+      <button (click)="switchSkills(spec)" *ngFor="let spec of mainSkills; let i = index"
+        ngClass="{{i===currentIndex ? 'active' : ''}}">{{spec.spec}}</button>
+    </div>
+    <div class="frontEnd" *ngIf="activeClass === 'frontEnd'">
+      <ul>
+        <li>good knowledge of React,</li>
+        <li>good knowledge of JS,</li>
+        <li>good knowledge of CSS,</li>
+        <li>good knowledge of HTML,</li>
+        <li>knowledge of RestAPI,</li>
+        <li>knowledge of Redux,</li>
+        <li>knowledge of Git,</li>
+        <li>knowledge of AzureDevops,</li>
+        <li>knowledge of JQ,</li>
+        <li>knowledge of RWD,</li>
+        <li>knowledge of LASS, SASS preprocessors.</li>
+      </ul>
+    </div>
+    <div class="DTP" *ngIf="activeClass === 'DTP'">
+      <ul>
+        <li>perfect knowledge of Illustrator,</li>
+        <li>perfect knowledge of Photoshop,</li>
+        <li>very good knowledge of InDesign,</li>
+        <li>very good knowledge of FrameMaker,</li>
+        <li>very good knowledge of Acrobat,</li>
+        <li>very good knowledge of MS Office,</li>
+        <li>fluent knowledge of DTP principles,</li>
+        <li>fluent knowledge of work environment on the Windows and iOS.</li>
+      </ul>
+    </div>
+    <div class="softSkills" *ngIf="activeClass === 'softSkills'">
+      <ul>
+        <li>english at B2,</li>
+        <li>communicative,</li>
+        <li>critical thinking,</li>
+        <li>problem solving,</li>
+        <li>teamworking,</li>
+        <li>leadership skills,</li>
+        <li>ability to work under pressure and time.</li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,52 @@
+header {
+  position: relative;
+
+  .btn-lang {
+    position: absolute;
+    z-index: 1;
+    left: 5vw;
+    top: 2vw;
+
+    button {
+      display: flex;
+      align-items: center;
+      height: 20px;
+      background-color: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+
+      fa-icon {
+        padding-right: 5px;
+      }
+
+      p {
+        text-decoration: none;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .head {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    left: 5vw;
+    bottom: 5vw;
+
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    h2 {
+      font-weight: 200;
+      font-size: 1.5rem;
+      line-height: 1.1;
+    }
+  }
+
+  .bg-image {
+    width: 100%;
+    position: relative;
+  }
+}

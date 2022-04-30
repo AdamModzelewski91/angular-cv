@@ -1,0 +1,11 @@
+@use '/src/variables';
+
+footer {
+  padding: variables.$padding;
+  background-color: variables.$bgc-dark;
+  color: #fff;
+
+  h1 {
+    text-align: center;
+  }
+}
