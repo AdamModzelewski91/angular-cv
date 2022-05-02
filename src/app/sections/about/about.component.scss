@@ -2,7 +2,7 @@
 
 .about {
   padding: variables.$padding;
-  color: variables.$bgc-dark;
+  color: #fff;
   
   h1{
     font-size: variables.$main-header;
@@ -21,7 +21,7 @@
     }
 
     p{
-      color: variables.$bgc-dark;
+      color: variables.$date-color;
       font-size: variables.$list-font-size;
     }    
   }

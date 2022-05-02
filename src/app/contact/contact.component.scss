@@ -24,8 +24,14 @@
         padding-right: 20px;
       }
 
-      h2 {
+      h2, a {
         font-size: variables.$header-font-size;
+      }
+
+      a{
+        text-decoration: none;
+        color: variables.$bgc-dark;
+        font-weight: 600;
       }
 
       p {

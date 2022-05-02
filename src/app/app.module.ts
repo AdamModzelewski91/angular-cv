@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -11,6 +11,7 @@ import { ExpComponent } from './sections/exp/exp.component';
 import { AboutComponent } from './sections/about/about.component';
 import { ProjectsComponent } from './sections/projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
+import { TooltipDirective } from './sections/projects/tooltip.directive';
 
 @NgModule({
   declarations: [
@@ -22,11 +23,12 @@ import { ContactComponent } from './contact/contact.component';
     ExpComponent,
     AboutComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    TooltipDirective
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule
+    FontAwesomeModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

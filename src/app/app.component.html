@@ -2,19 +2,11 @@
   <app-nav></app-nav>
   <app-header></app-header>
   <div class="sections">
-    <div>
-      <app-skills></app-skills>
-    </div>
-    <div>
-      <app-exp></app-exp>
-    </div>
-    <div>
-      <app-about></app-about>
-    </div>
-    <div>
-      <app-projects></app-projects>
-    </div>
+    <div #skillsRef><app-skills></app-skills></div>
+    <div #expRef><app-exp></app-exp></div>
+    <div #projectsRef><app-projects></app-projects></div>
+    <div #aboutRef><app-about></app-about></div>
   </div>
-  <app-contact></app-contact>
+  <div #contactRef><app-contact ></app-contact></div> 
   <app-footer></app-footer>
 </div>

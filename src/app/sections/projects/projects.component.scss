@@ -2,7 +2,7 @@
 
 .projects {
   padding: 5vw 8vw;
-  color: #fff;
+  color: variables.$bgc-dark;
 
   h1 {
     font-size: variables.$main-header;
@@ -11,6 +11,10 @@
   }
 
   .wrapper {
+
+    .languages-view{
+      padding-bottom: 0;
+    }
 
     div {
       padding-bottom: variables.$padding-20;
@@ -24,19 +28,45 @@
 
     h3 {
       font-size: variables.$h3-font-size;
-      color: variables.$date-color;
+      color: variables.$bgc-dark;
       padding-bottom: variables.$header-padding;
     }
 
     p {
-      color: variables.$date-color;
+      color: variables.$bgc-dark;
       font-size: variables.$paragraph-font-size;
+    }
+
+    a {
+      font-size: variables.$h3-font-size;
+      text-decoration: none;      
     }
 
     li {
       font-size: variables.$list-font-size;
       padding-left: variables.$list-padding-left;
       padding-bottom: variables.$list-padding-bot;
+      color: variables.$bgc-light-dark;
     }
+
+    iframe {
+      width: 100%;
+      height: 35vh;
+    }
+
+    .links {
+      padding-bottom: 0;      
+      
+      a:nth-last-child(1){
+        color: green;
+        padding-left: 5px;
+        position: relative;
+
+        fa-icon {
+          position: absolute;
+          top: 0;
+        }
+      }
+    }    
   }
 }

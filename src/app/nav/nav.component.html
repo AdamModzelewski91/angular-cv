@@ -1,10 +1,10 @@
 <nav class="nav">
   <ul>
     <li><a href="#" class="home">Home</a></li>
-    <li><a href="#" class="skills">Skills</a></li>
-    <li><a href="#" class="exp">Experience</a></li>
-    <li><a href="#" class="exp">My Projects</a></li>
-    <li><a href="#" class="me">About me</a></li>
-    <li><a href="#" class="me">Contact</a></li>
+    <li (click)="scroll(navScrolling.skillsElementRef.nativeElement)"><a class="skills">Skills</a></li>
+    <li (click)="scroll(navScrolling.expElementRef.nativeElement)"><a class="exp">Experience</a></li>
+    <li (click)="scroll(navScrolling.projectsElementRef.nativeElement)"><a class="exp">My Projects</a></li>
+    <li (click)="scroll(navScrolling.aboutElementRef.nativeElement)"><a class="me">About me</a></li>
+    <li (click)="scroll(navScrolling.contactElementRef.nativeElement)"><a class="me">Contact</a></li>
   </ul>
 </nav>
