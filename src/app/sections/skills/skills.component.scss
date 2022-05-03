@@ -56,5 +56,14 @@
       padding-left: variables.$list-padding-left;
       padding-bottom: variables.$list-padding-bot;
     }
+
+    .level {
+      display: flex;
+      flex-wrap: wrap;
+
+      img {
+        max-height: 40px;
+      }
+    }
   }
 }
