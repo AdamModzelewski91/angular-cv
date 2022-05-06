@@ -13,7 +13,7 @@ export class SkillsComponent implements OnInit {
 
   constructor() {
     this.mainSkills = [
-      { id: 1, spec: 'Front-End', className: 'frontEnd' },
+      { id: 1, spec: 'Frontend', className: 'frontEnd' },
       { id: 2, spec: 'DTP', className: 'DTP' },
       { id: 3, spec: 'Soft', className: 'softSkills' },
     ]

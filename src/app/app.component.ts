@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,11 @@ export class AppComponent {
   @ViewChild('projectsRef') projectsElementRef!: ElementRef;
   @ViewChild('aboutRef') aboutElementRef!: ElementRef;
   @ViewChild('contactRef') contactElementRef!: ElementRef;
+
+  constructor(
+    public translate: TranslateService
+  ) {
+    translate.addLangs(['en', 'pl']);
+    translate.setDefaultLang('en');
+  }
 }

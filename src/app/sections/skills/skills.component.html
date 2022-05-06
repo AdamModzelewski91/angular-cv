@@ -1,14 +1,14 @@
 <section class="skills">
-  <h1>Skills</h1>
+  <h1 translate>Skills</h1>
   <div class="wrapper">
     <div class="skills-switch">
       <button (click)="switchSkills(spec)" *ngFor="let spec of mainSkills; let i = index"
-        ngClass="{{i===currentIndex ? 'active' : ''}}">{{spec.spec}}</button>
+        ngClass="{{i===currentIndex ? 'active' : ''}}">{{spec.spec | translate}}</button>
     </div>
     <div class="frontEnd" *ngIf="activeClass === 'frontEnd'">
       <ul>
         <li>
-          <h2>Experienced:</h2>
+          <h2 translate>Experienced:</h2>
           <ul class="level">
             <li><img src="../../../assets/angularjs.jpg" alt="AngularJS"></li>
             <li><img src="../../../assets/TS.png" alt="TS"></li>
@@ -21,7 +21,7 @@
           </ul>
         </li>
         <li>
-          <h2>Competent:</h2>
+          <h2 translate>Competent:</h2>
           <ul class="level">
             <li><img src="../../../assets/Angular.png" alt="Angular"></li>
             <li><img src="../../../assets/react.png" alt="React"></li>
@@ -30,7 +30,7 @@
           </ul>
         </li>
         <li>
-          <h2>Basics:</h2>
+          <h2 translate>Basics:</h2>
           <ul class="level">
             <li><img src="../../../assets/webpack.png" alt="Webpack"></li>
             <li><img src="../../../assets/bootstrap.png" alt="Bootstrap"></li>
@@ -38,7 +38,7 @@
           </ul>
         </li>
         <li>
-          <h2>Slightly:</h2>
+          <h2 translate>Slightly:</h2>
           <ul class="level">
             <li><img src="../../../assets/mongoDB.png" alt="MongoDB"></li>
             <li><img src="../../../assets/Mongoose.png" alt="Mongoose"></li>
@@ -49,25 +49,25 @@
     </div>
     <div class="DTP" *ngIf="activeClass === 'DTP'">
       <ul>
-        <li>perfect knowledge of Illustrator,</li>
-        <li>perfect knowledge of Photoshop,</li>
-        <li>very good knowledge of InDesign,</li>
-        <li>very good knowledge of FrameMaker,</li>
-        <li>very good knowledge of Acrobat,</li>
-        <li>very good knowledge of MS Office,</li>
-        <li>fluent knowledge of DTP principles,</li>
-        <li>fluent knowledge of work environment on the Windows and iOS.</li>
+        <li translate>perfect knowledge of<span> Illustrator,</span></li>
+        <li translate>perfect knowledge of<span> Photoshop,</span></li>
+        <li translate>very good knowledge of<span> InDesign,</span></li>
+        <li translate>very good knowledge of<span> FrameMaker,</span></li>
+        <li translate>very good knowledge of<span> Acrobat,</span></li>
+        <li translate>very good knowledge of<span> MS Office,</span></li>
+        <li translate>fluent knowledge of DTP principles,</li>
+        <li translate>fluent knowledge of work environment on the Windows.</li>
       </ul>
     </div>
     <div class="softSkills" *ngIf="activeClass === 'softSkills'">
       <ul>
-        <li>english at B2,</li>
-        <li>communicative,</li>
-        <li>critical thinking,</li>
-        <li>problem solving,</li>
-        <li>teamworking,</li>
-        <li>leadership skills,</li>
-        <li>ability to work under pressure and time.</li>
+        <li translate>english at B2,</li>
+        <li translate>communicative,</li>
+        <li translate>critical thinking,</li>
+        <li translate>problem solving,</li>
+        <li translate>teamworking,</li>
+        <li translate>leadership skills,</li>
+        <li translate>ability to work under pressure and time.</li>
       </ul>
     </div>
   </div>
