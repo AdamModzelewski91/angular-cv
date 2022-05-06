@@ -32,15 +32,15 @@ export class HeaderComponent implements OnInit {
     const speltProfessions: any[] = [];
     professions.forEach(prof => speltProfessions.push([...prof]));
 
-    this.spellingProfesionByWord(speltProfessions[this.currentProfIndex])
+    this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex])
     setInterval(() => {
       this.displayProf = '';
-      this.currentProfIndex === 0 ? this.currentProfIndex = 1 : this.currentProfIndex = 0;
-      this.spellingProfesionByWord(speltProfessions[this.currentProfIndex]);
+      this.currentProfIndex === professions.length - 1 ? this.currentProfIndex = 0 : this.currentProfIndex += 1;
+      this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex]);
     }, speltProfessions[this.currentProfIndex].length * this.timeOfTyping * 1.5);
   };
 
-  spellingProfesionByWord = (currentProf: string[]) => {
+  spellingProfesionByLetter = (currentProf: string[]) => {
     currentProf.forEach((letter, i) => {
       setTimeout(() => {
         this.displayProf += letter;
