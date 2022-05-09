@@ -1,7 +1,7 @@
 @use '../../../variables';
 
 .experience {
-  padding: 5vw 8vw;
+  padding: variables.$padding;
   color: #fff;
   
   h1{

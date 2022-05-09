@@ -1,7 +1,7 @@
 @use '../../../variables';
 
 .skills {
-  padding: 5vw 8vw;
+  padding: variables.$padding;
   color: variables.$bgc-dark;
   min-height: 80vh;
 

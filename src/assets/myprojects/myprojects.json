@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Cinemafinder",
+    "langs": [
+      "AngularJS",
+      "JS",
+      "RestAPI",
+      "HTML",
+      "CSS"
+    ],
+    "img": "../../../assets/myprojects",
+    "github": "https://github.com/AdamModzelewski91/cinemato_finder",
+    "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
+    "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
+  },
+  {
+    "name": "Bookstore",
+    "langs": [
+      "React",
+      "Redux",
+      "JS",
+      "HTML",
+      "CSS"
+    ],
+    "img": "../../../assets/myprojects",
+    "github": "https://github.com/AdamModzelewski91/Bookstore",
+    "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
+    "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
+  },
+  {
+    "name": "Motonews",
+    "langs": [
+      "React",
+      "JS",
+      "HTML",
+      "CSS"
+    ],
+    "img": "../../../assets/myprojects",
+    "github": "https://github.com/AdamModzelewski91/Motonews",
+    "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
+    "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
+  },
+  {
+    "name": "CV - this project",
+    "langs": [
+      "Angular",
+      "TS",
+      "HTML",
+      "CSS"
+    ],
+    "img": "../../../assets/myprojects",
+    "github": "https://github.com/AdamModzelewski91/angular-cv",
+    "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
+    "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
+  }  
+]

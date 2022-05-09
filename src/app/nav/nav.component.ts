@@ -7,19 +7,15 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  public navScrolling: AppComponent;
   
   constructor(
-    public navRef: AppComponent,
-  ) { 
-    this.navScrolling = this.navRef;      
-  }
+    public navRef: AppComponent,    
+  ) { }
   
   ngOnInit(): void {
   }
-
-  scroll(el: HTMLElement) {
-    el.scrollIntoView({behavior: 'smooth'})
+  
+  scrollToSection = (el: HTMLElement): void => {
+    el.scrollIntoView({behavior: 'smooth'})    
   }
-
 }

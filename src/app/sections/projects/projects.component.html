@@ -1,34 +1,29 @@
 <div class="projects">
   <h1 translate>My Projects</h1>
   <div class="wrapper">
-    <div class="project">
-      <h2>Cinemafinder</h2>
+    <div class="project" *ngFor="let project of myProjectsApi">
+      <h2>{{ project.name }}</h2>
       <div class="languages-view">
         <div class="languages">
           <h3 translate>Languages:</h3>
           <ul>
-            <li>AngularJS</li>
-            <li>JS</li>
-            <li>RestAPI</li>
-            <li>HTML</li>
-            <li>CSS</li>
+            <li *ngFor="let lang of project.langs">{{ lang }}</li>
           </ul>
         </div>
         <div>
-          <iframe src="https://adammodzelewski91.github.io/cinemato_finder/" frameborder="0" scrolling="yes"></iframe>
+          <img src="{{project.img}}">
           <div class="links">
-            <a href="https://github.com/AdamModzelewski91/cinemato_finder" [tooltip]="'Go to code'" translate>GitHub
+            <a href="{{project.github}}" [tooltip]="'Go to code'" translate>GitHub
               code</a>
-            <a href="https://adammodzelewski91.github.io/cinemato_finder/">
+            <a href="project.iframe">
               <fa-icon [tooltip]="'Go to Web'" [icon]="faGlobe" size="1x"></fa-icon>
             </a>
           </div>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat
-        laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.</p>
+      <p>{{ project.description_pl }}</p>
     </div>
-    <div class="project">
+    <!-- <div class="project">
       <h2>Bookstore</h2>
       <div class="languages-view">
         <div class="languages">
@@ -97,6 +92,6 @@
       </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat
         laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.</p>
-    </div>
+    </div> -->
   </div>
 </div>

@@ -1,11 +1,21 @@
+@use '/src/variables';
+
 header {
-  position: relative;
+  position: relative; 
+
+  @include variables.breakpoint(tablet_768w){
+    height: 100vh;
+  }
 
   .btn-lang {
     position: absolute;
     z-index: 1;
     left: 5vw;
     top: 2vw;
+
+    @include variables.breakpoint(tablet_768w){
+      top: 10vh;
+    }
 
     button {
       display: flex;
@@ -55,6 +65,11 @@ header {
   .bg-image {
     width: 100%;
     position: relative;
+
+    @include variables.breakpoint(tablet_768w){
+      height: 100vh;
+      object-fit: cover;
+    }
   }
 }
 

@@ -1,11 +1,19 @@
 @use '/src/variables';
 
 .nav {
-  background-color: variables.$bgc-dark;
+  background-color: variables.$bgc-dark;  
 
   ul {
     display: flex;
     flex-direction: column;
+
+    @include variables.breakpoint(tablet_768w) {
+      flex-direction: row;
+      justify-content: space-around;
+      position: fixed;
+      z-index: 2;
+      min-height: 5vh;
+    }
 
     li {
       text-align: center;
@@ -16,6 +24,11 @@
         background-color: lighten($color: variables.$bgc-dark, $amount: 10);
       }
 
+      @include variables.breakpoint(tablet_768w) {
+        background-color: variables.$bgc-dark;
+        width: 16.666vw;
+      }
+
       a {
         text-decoration: none;
         color: white;
@@ -23,5 +36,5 @@
         font-size: 1.5rem;
       }
     }
-  }
+  }  
 }
