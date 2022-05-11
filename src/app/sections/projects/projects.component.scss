@@ -8,12 +8,29 @@
     font-size: variables.$main-header;
     text-align: center;
     padding-bottom: 15px;
+
+    @include variables.breakpoint(tablet_768w) {
+      font-size: 4rem;
+    }
   }
 
   .wrapper {
 
-    .languages-view{
+    .languages-view {
       padding-bottom: 0;
+
+      @include variables.breakpoint(tablet_768w) {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .img-frame {
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
     }
 
     div {
@@ -24,22 +41,38 @@
       font-size: variables.$header-font-size;
       color: variables.$header-color;
       padding-bottom: variables.$header-padding;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2.5rem;
+      }
     }
 
     h3 {
       font-size: variables.$h3-font-size;
       color: variables.$bgc-dark;
       padding-bottom: variables.$header-padding;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2.3rem;
+      }
     }
 
     p {
       color: variables.$bgc-dark;
       font-size: variables.$paragraph-font-size;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 1.8rem;
+      }
     }
 
     a {
       font-size: variables.$h3-font-size;
-      text-decoration: none;      
+      text-decoration: none;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 1.8rem;
+      }
     }
 
     li {
@@ -47,17 +80,21 @@
       padding-left: variables.$list-padding-left;
       padding-bottom: variables.$list-padding-bot;
       color: variables.$bgc-light-dark;
-    }
 
-    iframe {
-      width: 100%;
-      height: 35vh;
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2rem;
+      }
     }
 
     .links {
-      padding-bottom: 0;      
-      
-      a:nth-last-child(1){
+      padding-bottom: 0;
+
+      @include variables.breakpoint(tablet_768w) {
+        text-align: right;
+        font-size: 1.5rem;
+      }
+
+      a:nth-last-child(1) {
         color: green;
         padding-left: 5px;
         position: relative;
@@ -67,6 +104,6 @@
           top: 0;
         }
       }
-    }    
+    }
   }
 }

@@ -15,7 +15,7 @@ import { ExpComponent } from './sections/exp/exp.component';
 import { AboutComponent } from './sections/about/about.component';
 import { ProjectsComponent } from './sections/projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
-import { TooltipDirective } from './sections/projects/tooltip.directive';
+import { TooltipDirective } from './directives/tooltip.directive';
 
 @NgModule({
   declarations: [

@@ -1,9 +1,9 @@
 @use '/src/variables';
 
 header {
-  position: relative; 
+  position: relative;
 
-  @include variables.breakpoint(tablet_768w){
+  @include variables.breakpoint(tablet_768w) {
     height: 100vh;
   }
 
@@ -13,26 +13,32 @@ header {
     left: 5vw;
     top: 2vw;
 
-    @include variables.breakpoint(tablet_768w){
-      top: 10vh;
+    @include variables.breakpoint(tablet_768w) {
+      top: 7vw;
     }
 
     button {
+      font-size: 1.5rem;
       display: flex;
       align-items: center;
-      height: 20px;
+      font-weight: 600;
       background-color: transparent;
       border: none;
       color: #fff;
       cursor: pointer;
 
-      fa-icon {
-        padding-right: 5px;
+      @include variables.breakpoint(tablet_768w) {
+        top: 10vh;
+        font-size: 2rem;
       }
 
-      p {
-        text-decoration: none;
-        font-weight: 600;
+      fa-icon {
+        padding-right: 5px;
+        font-size: 0.5rem;
+
+        @include variables.breakpoint(tablet_768w) {
+          font-size: 0.8rem;
+        }
       }
     }
   }
@@ -44,29 +50,40 @@ header {
     z-index: 1;
     color: #fff;
 
-    h1 {  
+    h1 {
       font-size: 1.8rem;
-      line-height: 2.5rem;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 3.8rem;
+      }
     }
 
     h2 {
-      height: 2.5rem;
-      font-weight: 200;
       font-size: 1.5rem;
+      font-weight: 200;
 
-      span{
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 3.5rem;
+        line-height: 4.5rem;
+      }
+
+      span {
         font-size: 1.5rem;
         font-weight: 400;
         animation: cursorBlink 0.8s infinite ease-in-out;
-      }     
+
+        @include variables.breakpoint(tablet_768w) {
+          font-size: 3.5rem;
+        }
+      }
     }
-  } 
+  }
 
   .bg-image {
     width: 100%;
     position: relative;
 
-    @include variables.breakpoint(tablet_768w){
+    @include variables.breakpoint(tablet_768w) {
       height: 100vh;
       object-fit: cover;
     }
@@ -74,6 +91,11 @@ header {
 }
 
 @keyframes cursorBlink {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
-} 
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

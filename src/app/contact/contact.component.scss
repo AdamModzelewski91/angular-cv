@@ -8,6 +8,10 @@
     font-size: variables.$main-header;
     text-align: center;
     padding-bottom: 15px;
+
+    @include variables.breakpoint(tablet_768w) {
+      font-size: 4rem;
+    }
   }
 
   .wrapper {
@@ -18,17 +22,22 @@
       display: flex;
       align-items: center;
       padding-bottom: variables.$padding-20;
-      width: 200px;
+      width: 400px;
 
       fa-icon {
         padding-right: 20px;
       }
 
-      h2, a {
+      h2,
+      a {
         font-size: variables.$header-font-size;
+
+        @include variables.breakpoint(tablet_768w) {
+          font-size: 2.5rem;
+        }
       }
 
-      a{
+      a {
         text-decoration: none;
         color: variables.$bgc-dark;
         font-weight: 600;
@@ -36,6 +45,10 @@
 
       p {
         font-size: variables.$list-font-size;
+
+        @include variables.breakpoint(tablet_768w) {
+          font-size: 2rem;
+        }
       }
     }
   }

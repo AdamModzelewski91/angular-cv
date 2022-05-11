@@ -9,6 +9,10 @@
     font-size: variables.$main-header;
     text-align: center;
     padding-bottom: 15px;
+
+    @include variables.breakpoint(tablet_768w) {
+      font-size: 4rem;
+    }
   }
 
   .wrapper {
@@ -26,6 +30,10 @@
         border: none;
         margin: 0 2px;
         cursor: pointer;
+
+        @include variables.breakpoint(tablet_768w) {
+          font-size: 2rem;
+        }
       }
 
       button:hover {
@@ -49,12 +57,26 @@
       font-size: variables.$header-font-size;
       color: variables.$header-color;
       padding-bottom: variables.$header-padding;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2.3rem;
+      }
     }
 
     li {
       font-size: variables.$list-font-size;
       padding-left: variables.$list-padding-left;
       padding-bottom: variables.$list-padding-bot;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2rem;
+      }
+
+      span {
+        @include variables.breakpoint(tablet_768w) {
+          font-size: 2rem;
+        }
+      }
     }
 
     .level {
@@ -63,6 +85,14 @@
 
       img {
         max-height: 40px;
+
+        @include variables.breakpoint(tablet_768w) {
+          max-height: 60px;
+        }
+
+        @include variables.breakpoint(desktop_1400w) {
+          max-height: 80px;
+        }
       }
     }
   }

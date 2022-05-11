@@ -8,7 +8,7 @@
       "HTML",
       "CSS"
     ],
-    "img": "../../../assets/myprojects",
+    "images": "../../../assets/myprojects",
     "github": "https://github.com/AdamModzelewski91/cinemato_finder",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
@@ -22,7 +22,11 @@
       "HTML",
       "CSS"
     ],
-    "img": "../../../assets/myprojects",
+    "images": [
+      "../../../assets/git.png",
+      "../../../assets/git.png",
+      "../../../assets/git.png"
+    ],
     "github": "https://github.com/AdamModzelewski91/Bookstore",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
@@ -35,7 +39,7 @@
       "HTML",
       "CSS"
     ],
-    "img": "../../../assets/myprojects",
+    "images": "../../../assets/myprojects",
     "github": "https://github.com/AdamModzelewski91/Motonews",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
@@ -48,9 +52,9 @@
       "HTML",
       "CSS"
     ],
-    "img": "../../../assets/myprojects",
+    "images": "../../../assets/myprojects",
     "github": "https://github.com/AdamModzelewski91/angular-cv",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
-  }  
+  }
 ]

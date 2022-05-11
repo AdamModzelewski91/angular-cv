@@ -1,11 +1,23 @@
 @use '/src/variables';
 
 footer {
-  padding: variables.$padding;
+  padding: 20px 8vw;
   background-color: variables.$bgc-dark;
   color: #fff;
 
   h1 {
     text-align: center;
+    font-size: 1.5rem;
+
+    @include variables.breakpoint(tablet_768w) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+
+    @include variables.breakpoint(tablet_768w) {
+      font-size: 1.5rem;
+    }
   }
 }

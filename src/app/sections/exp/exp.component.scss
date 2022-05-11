@@ -3,33 +3,51 @@
 .experience {
   padding: variables.$padding;
   color: #fff;
-  
-  h1{
+
+  h1 {
     font-size: variables.$main-header;
     text-align: center;
     padding-bottom: 15px;
+
+    @include variables.breakpoint(tablet_768w) {
+      font-size: 4rem;
+    }
   }
 
-  .wrapper{
+  .wrapper {
 
-    div{
+    div {
       padding-bottom: variables.$padding-20;
     }
 
-    h2{
+    h2 {
       font-size: variables.$header-font-size;
       color: variables.$header-color;
       padding-bottom: variables.$header-padding;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2.3rem;
+      }
     }
 
-    p{
+    p,
+    span {
       color: variables.$date-color;
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 1.5rem;
+      }
     }
 
-    li{
+    li {
       font-size: variables.$list-font-size;
       padding-left: variables.$list-padding-left;
       padding-bottom: variables.$list-padding-bot;
+
+      @include variables.breakpoint(tablet_768w) {
+
+        font-size: 2rem;
+      }
     }
   }
 }

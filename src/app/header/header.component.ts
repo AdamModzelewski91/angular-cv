@@ -19,9 +19,7 @@ export class HeaderComponent implements OnInit {
     this.createProfessionView(this.professionPerfomed);
   }
 
-  constructor(
-    public translate: TranslateService,
-  ) { }
+  constructor(public translate: TranslateService) { }
 
   switchLang = () => {
     this.lang === 'pl' ? this.lang = 'en' : this.lang = 'pl';
@@ -32,12 +30,13 @@ export class HeaderComponent implements OnInit {
     const speltProfessions: any[] = [];
     professions.forEach(prof => speltProfessions.push([...prof]));
 
+    const speedRatio = 1.5;
     this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex])
     setInterval(() => {
       this.displayProf = '';
       this.currentProfIndex === professions.length - 1 ? this.currentProfIndex = 0 : this.currentProfIndex += 1;
       this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex]);
-    }, speltProfessions[this.currentProfIndex].length * this.timeOfTyping * 1.5);
+    }, speltProfessions[this.currentProfIndex].length * this.timeOfTyping * speedRatio);
   };
 
   spellingProfesionByLetter = (currentProf: string[]) => {

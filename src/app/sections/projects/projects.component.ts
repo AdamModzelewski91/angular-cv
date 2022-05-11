@@ -6,9 +6,12 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
+
 export class ProjectsComponent implements OnInit {
   public faGlobe = faGlobe;
   public myProjectsApi: any[] = [];
+  public currentIndexSlide: number = 0;
+  private speedOfSwitchSlides: number = 5000;
 
   constructor() { }
 
@@ -18,6 +21,15 @@ export class ProjectsComponent implements OnInit {
     })
       .then(res => res.json())
       .then(data => this.myProjectsApi = data)
+
+    this.switchSlides();
+  }
+
+  switchSlides = () => {
+    setInterval(() => {
+      this.currentIndexSlide++;
+      this.currentIndexSlide === 3 ? this.currentIndexSlide = 0 : null;
+    }, this.speedOfSwitchSlides)
   }
 
 }

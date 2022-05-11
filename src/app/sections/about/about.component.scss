@@ -3,26 +3,51 @@
 .about {
   padding: variables.$padding;
   color: #fff;
-  
-  h1{
+
+  h1 {
     font-size: variables.$main-header;
     text-align: center;
     padding-bottom: 15px;
+
+    @include variables.breakpoint(tablet_768w) {
+      font-size: 4rem;
+    }
   }
 
-  .wrapper{
+  .wrapper {
 
-    img{
+    overflow: auto;
+
+    img {
       width: 100%;
+
+      @include variables.breakpoint(tablet_768w) {
+        float: left;
+        width: 40%;
+        padding: 7px 20px 0;
+      }
+
+      @include variables.breakpoint(desktop_1400w) {
+        width: 30%;
+        padding: 7px 40px 0;
+      }
     }
 
-    div{
+    div {
       padding-bottom: variables.$padding-20;
     }
 
-    p{
+    p {
       color: variables.$date-color;
       font-size: variables.$list-font-size;
-    }    
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2.2rem;
+      }
+
+      @include variables.breakpoint(desktop_1400w) {
+        font-size: 3rem;
+      }
+    }
   }
 }
