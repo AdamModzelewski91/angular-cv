@@ -8,7 +8,7 @@
       "HTML",
       "CSS"
     ],
-    "images": "../../../assets/myprojects",
+    "iframe": "https://adammodzelewski91.github.io/cinemato_finder/dist/",
     "github": "https://github.com/AdamModzelewski91/cinemato_finder",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
@@ -21,12 +21,8 @@
       "JS",
       "HTML",
       "CSS"
-    ],
-    "images": [
-      "../../../assets/git.png",
-      "../../../assets/git.png",
-      "../../../assets/git.png"
-    ],
+    ],    
+    "iframe": "https://adammodzelewski91.github.io/Bookstore/",
     "github": "https://github.com/AdamModzelewski91/Bookstore",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
@@ -39,7 +35,7 @@
       "HTML",
       "CSS"
     ],
-    "images": "../../../assets/myprojects",
+    "iframe": "https://adammodzelewski91.github.io/Motonews/",
     "github": "https://github.com/AdamModzelewski91/Motonews",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."
@@ -52,7 +48,7 @@
       "HTML",
       "CSS"
     ],
-    "images": "../../../assets/myprojects",
+    "iframe": "",
     "github": "https://github.com/AdamModzelewski91/angular-cv",
     "description_pl": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
     "description_en": "orem ipsum dolor sit amet consectetur adipisicing elit."

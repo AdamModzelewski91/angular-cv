@@ -23,13 +23,15 @@
 
       button {
         padding: 5px 15px;
+        border-radius: 5px;
         width: 100px;
         font-size: 1.2rem;
         color: #fff;
         background-color: variables.$bgc-dark;
         border: none;
-        margin: 0 2px;
+        margin: 0 10px;
         cursor: pointer;
+        transition: 0.2s;
 
         @include variables.breakpoint(tablet_768w) {
           font-size: 2rem;
@@ -38,6 +40,7 @@
 
       button:hover {
         background-color: lighten($color: variables.$bgc-dark, $amount: 20);
+        box-shadow: 0 0 5px variables.$bgc-dark;
       }
 
       .active {

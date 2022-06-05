@@ -1,32 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { faRepeat } from '@fortawesome/free-solid-svg-icons';
-import { TranslateService } from '@ngx-translate/core';
+import { ServiceService } from '../services/service.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   public faRepeat = faRepeat;
-  public lang: string = 'en';
   public professionPerfomed: string[] = ['Frontend Developer', 'DTP Operator'];
   public displayProf: string = '';
   public timeOfTyping: number = 200;
   public currentProfIndex: number = 0;
 
+  constructor(
+    public service: ServiceService,
+  ) { }
+
   ngOnInit(): void {
     this.createProfessionView(this.professionPerfomed);
   }
 
-  constructor(public translate: TranslateService) { }
-
-  switchLang = () => {
-    this.lang === 'pl' ? this.lang = 'en' : this.lang = 'pl';
-    this.translate.use(this.lang);
-  }
-
-  createProfessionView = (professions: string[]) => {
+  createProfessionView = (professions: string[]): void => {
     const speltProfessions: any[] = [];
     professions.forEach(prof => speltProfessions.push([...prof]));
 
@@ -39,11 +35,16 @@ export class HeaderComponent implements OnInit {
     }, speltProfessions[this.currentProfIndex].length * this.timeOfTyping * speedRatio);
   };
 
-  spellingProfesionByLetter = (currentProf: string[]) => {
+  spellingProfesionByLetter = (currentProf: string[]): void => {
     currentProf.forEach((letter, i) => {
       setTimeout(() => {
         this.displayProf += letter;
       }, (i + 1) * this.timeOfTyping)
     });
   };
+
+  ngOnDestroy(): void {
+    this.spellingProfesionByLetter
+    this.createProfessionView
+  }
 }

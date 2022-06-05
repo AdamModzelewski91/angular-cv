@@ -86,6 +86,13 @@
       }
     }
 
+    span{
+
+      @include variables.breakpoint(tablet_768w) {
+        font-size: 2rem;
+      }
+    }
+
     .links {
       padding-bottom: 0;
 
