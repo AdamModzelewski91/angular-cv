@@ -6,18 +6,14 @@ import { Directive, ElementRef, HostListener, Input, OnDestroy } from '@angular/
 export class TooltipDirective implements OnDestroy {
 
   @Input() tooltip = ''; 
-  @Input() delay? = 190; 
+  delay? = 190; 
 
-  public myPopup: any;
-  public timer: any;
+  myPopup: any;
+  timer!: number;
 
   constructor(private el: ElementRef) { }
 
-  ngOnDestroy(): void {
-    if (this.myPopup) { this.myPopup.remove() }
-  }
-
-  @HostListener('mouseenter') onMouseEnter() {    
+  @HostListener('mouseenter') onMouseEnter(): void {    
     this.timer = setTimeout(() => {
       let x = this.el.nativeElement.getBoundingClientRect().left + this.el.nativeElement.offsetWidth / 2; // Get the middle of the element
       let y = this.el.nativeElement.getBoundingClientRect().top + this.el.nativeElement.offsetHeight + 6; // Get the bottom of the element, plus a little extra
@@ -25,11 +21,11 @@ export class TooltipDirective implements OnDestroy {
     }, this.delay)
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
+  @HostListener('mouseleave') onMouseLeave(): void {
     if (this.timer) clearTimeout(this.timer);
-    if (this.myPopup) { this.myPopup.remove() }
+    if (this.myPopup) this.myPopup.remove();
   }
-
+  
   private createTooltipPopup(x: number, y: number) {
     let popup = document.createElement('div');
     popup.innerHTML = this.tooltip;
@@ -42,5 +38,8 @@ export class TooltipDirective implements OnDestroy {
       if (this.myPopup) this.myPopup.remove();
     }, 5000); 
   }
-
+  
+  ngOnDestroy(): void {
+    if (this.myPopup) this.myPopup.remove();
+  }
 }

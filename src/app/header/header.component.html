@@ -1,9 +1,9 @@
 <header class="header">
   <div class="btn-lang">
-    <button (click)="service.switchLang()">
+    <button (click)="switchLang()">
       <i class="fa-repeat"></i>
       <fa-icon [icon]="faRepeat" size="2x"></fa-icon>
-      {{ service.buttonLang | uppercase }}
+      {{ getPageLang | uppercase }}
     </button>
   </div>
   <div class="head">

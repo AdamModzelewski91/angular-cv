@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+interface MySkills {
+  id: number,
+  spec: string,
+  className: string,
+}
 
 @Component({
   selector: 'app-skills',
@@ -6,10 +12,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skills.component.scss'],
 })
 
-export class SkillsComponent implements OnInit {
-  public mainSkills: Array<mySkills>;
-  public currentIndex: number = 0;
-  public activeClass: string = 'frontEnd';
+export class SkillsComponent {
+  mainSkills: MySkills[];
+  currentIndex: number = 0;
+  activeClass: string = 'frontEnd';
 
   constructor() {
     this.mainSkills = [
@@ -19,18 +25,9 @@ export class SkillsComponent implements OnInit {
     ]
   }
 
-  ngOnInit(): void {
-
-  }
-
-  switchSkills = (skills: any) => {
+  switchSkills(skills: MySkills) {
     this.currentIndex = skills.id - 1;
     this.activeClass = skills.className;
-  };
+  }
 }
 
-interface mySkills {
-  id: number,
-  spec: string,
-  className: string,
-}

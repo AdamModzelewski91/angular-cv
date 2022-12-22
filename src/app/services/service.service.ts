@@ -5,14 +5,12 @@ import { TranslateService } from '@ngx-translate/core';
   providedIn: 'root'
 })
 export class ServiceService {
-  public buttonLang: string = 'pl';
-  public pageLang: string = 'en';
+  pageLang: string = 'pl';
 
   constructor(public translate: TranslateService) { }
 
-  switchLang () {
-    this.pageLang = this.buttonLang;
-    this.buttonLang === 'pl' ? this.buttonLang = 'en' : this.buttonLang = 'pl';
+  switchLang(): void {
     this.translate.use(this.pageLang);
+    this.pageLang === 'pl' ? this.pageLang = 'en' : this.pageLang = 'pl';
   }
 }

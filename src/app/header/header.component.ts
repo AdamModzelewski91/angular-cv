@@ -7,19 +7,21 @@ import { ServiceService } from '../services/service.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   public faRepeat = faRepeat;
   public professionPerfomed: string[] = ['Frontend Developer', 'DTP Operator'];
   public displayProf: string = '';
   public timeOfTyping: number = 200;
   public currentProfIndex: number = 0;
 
-  constructor(
-    public service: ServiceService,
-  ) { }
+  constructor(private service: ServiceService) { }
 
   ngOnInit(): void {
     this.createProfessionView(this.professionPerfomed);
+  }
+
+  get getPageLang(): string {
+    return this.service.pageLang;
   }
 
   createProfessionView = (professions: string[]): void => {
@@ -27,12 +29,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     professions.forEach(prof => speltProfessions.push([...prof]));
 
     const speedRatio = 1.5;
-    this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex])
+    this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex]);
+    const resetSpelling = speltProfessions[this.currentProfIndex].length * this.timeOfTyping * speedRatio;
+
     setInterval(() => {
       this.displayProf = '';
       this.currentProfIndex === professions.length - 1 ? this.currentProfIndex = 0 : this.currentProfIndex += 1;
       this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex]);
-    }, speltProfessions[this.currentProfIndex].length * this.timeOfTyping * speedRatio);
+    }, resetSpelling)
   };
 
   spellingProfesionByLetter = (currentProf: string[]): void => {
@@ -43,8 +47,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     });
   };
 
-  ngOnDestroy(): void {
-    this.spellingProfesionByLetter
-    this.createProfessionView
+  switchLang(): void{
+    this.service.switchLang();
   }
 }

@@ -1,10 +1,10 @@
 <nav class="nav">
   <ul>
-    <li (click)="scrollToSection(navRef.homeElementRef.nativeElement)"><a class="home" translate>Home</a></li>
-    <li (click)="scrollToSection(navRef.skillsElementRef.nativeElement)"><a class="skills" translate>Skills</a></li>
-    <li (click)="scrollToSection(navRef.expElementRef.nativeElement)"><a class="exp" translate>Experience</a></li>
-    <li (click)="scrollToSection(navRef.projectsElementRef.nativeElement)"><a class="projects" translate>My Projects</a></li>
-    <li (click)="scrollToSection(navRef.aboutElementRef.nativeElement)"><a class="about" translate>About me</a></li>
-    <li (click)="scrollToSection(navRef.contactElementRef.nativeElement)"><a class="contact" translate>Contact</a></li>
+    <li><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page" class="home" translate>Home</a></li>
+    <li><a routerLink="/skills" routerLinkActive="active" ariaCurrentWhenActive="page" class="skills" translate>Skills</a></li>
+    <li><a routerLink="/experience" routerLinkActive="active" ariaCurrentWhenActive="page" class="exp" translate>Experience</a></li>
+    <li><a routerLink="/my-projects" routerLinkActive="active" ariaCurrentWhenActive="page" class="projects" translate>My Projects</a></li>
+    <li><a routerLink="/about-me" routerLinkActive="active" ariaCurrentWhenActive="page" class="about" translate>About me</a></li>
+    <li><a routerLink="/contact" routerLinkActive="active" ariaCurrentWhenActive="page" class="contact" translate>Contact</a></li>
   </ul>
 </nav>

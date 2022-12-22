@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
 
 @Component({
@@ -6,15 +6,13 @@ import { AppComponent } from '../app.component';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
   
   constructor(
     public navRef: AppComponent,    
   ) { }
   
-  ngOnInit(): void {
-  }
-  
+
   scrollToSection = (el: HTMLElement): void => {
     el.scrollIntoView({behavior: 'smooth'})    
   }

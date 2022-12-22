@@ -16,6 +16,7 @@ import { AboutComponent } from './sections/about/about.component';
 import { ProjectsComponent } from './sections/projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { TooltipDirective } from './directives/tooltip.directive';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,8 @@ import { TooltipDirective } from './directives/tooltip.directive';
   imports: [
     BrowserModule,
     FontAwesomeModule,
-
     HttpClientModule,
+    AppRoutingModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

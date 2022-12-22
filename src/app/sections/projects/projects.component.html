@@ -13,9 +13,6 @@
           </ul>
         </div>
         <div>
-    <!--       <div class="img-frame" *ngIf="project.iframe">
-            <iframe [src]="getTrustedUrl(project.iframe)"></iframe>
-          </div> -->
           <div class="links">
             <a href="{{ project.github }}" target="_blank" [tooltip]="'Go to code'" translate>GitHub
               code</a>
@@ -25,7 +22,7 @@
           </div>
         </div>
       </div>
-      <p>{{ service.pageLang === 'pl' ? project.description_pl : project.description_en}}</p>
+      <p>{{ pageLang === 'pl' ? project.description_pl : project.description_en}}</p>
     </div>
   </div>
 </div>
