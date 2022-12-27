@@ -3,21 +3,20 @@
 
 module.exports = function (config) {
   config.set({
-    files: [
-      {
-        pattern: 'src/app/**/*.ts',
-        type: 'js',
-      }
-    ],
+    // files: [
+    //   {
+    //     pattern: 'src/**/!(*.spec|*.module|environment*|main|polyfills|test).ts',
+    //     type: 'js',
+    //   }
+    // ],
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-mocha-reporter'),
-      require('karma-sabarivka-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      // require('karma-coverage'),
+      require('karma-coverage'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -48,20 +47,31 @@ module.exports = function (config) {
 
     coverageIstanbulReporter: {
       dir: require('path').join(__dirname, './coverage/angular-cv'),
+      include: 'src/**/!(*.spec|*.module|environment*|main|polyfills|test).(ts|js)',
       reports: ['text-summary'],
     },
 
-    coverageReporter: {
-      include: 'src/**/!(*.spec|*.module|environment*|main|polyfills|test).(ts|js)',
-      //   type: 'text',
-      //   dir: 'coverage/',
-      //   file: 'coverage.txt',
-      //   type: 'text-summary',
-      //   reporters: ['text-summary'],
-      // includeAllSources: true,
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      // 'src/**/!(*.spec|*.module|environment*|main|polyfills|test).(ts|js)': ['coverage'],
+      // 'src/app/**/*.js': ['coverage'],
     },
 
-    reporters: ['sabarivka', 'mocha', 'coverage-istanbul'],
+    coverageReporter: {
+      dir: require('path').join(__dirname, './coverage/angular-cv'),
+      include: 'src/**/!(*.spec|*.module|environment*).(ts|js)',
+      exclude: 'src/(main|polyfills|test).ts',
+      // dir: 'coverage/',
+      // file: 'coverage.text',
+      // type: 'text-summary',
+      // reporters: ['text-summary'],
+      includeAllSources: true,
+      // sourceStore : require('karma-coverage-istanbul-reporter').Store.create('fslookup')
+    },
+
+    reporters: ['mocha',  'coverage-istanbul'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

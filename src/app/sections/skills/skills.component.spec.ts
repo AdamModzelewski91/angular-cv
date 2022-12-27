@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { TranslateService } from '@ngx-translate/core';
-import { ServiceService } from 'src/app/services/service.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 import { SkillsComponent } from './skills.component';
 
@@ -12,7 +12,7 @@ describe('SkillsComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ SkillsComponent ],
-      providers: [ ServiceService ],
+      providers: [ LanguageService ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ]
     }).compileComponents();
 

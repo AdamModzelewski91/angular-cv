@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { faRepeat } from '@fortawesome/free-solid-svg-icons';
-import { ServiceService } from '../services/service.service';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-header',
@@ -8,20 +8,19 @@ import { ServiceService } from '../services/service.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public faRepeat = faRepeat;
-  public professionPerfomed: string[] = ['Frontend Developer', 'DTP Operator'];
-  public displayProf: string = '';
-  public timeOfTyping: number = 200;
-  public currentProfIndex: number = 0;
+  faRepeat = faRepeat;
+  professionPerfomed: string[] = ['Frontend Developer', 'DTP Operator'];
+  displayProf: string = '';
+  timeOfTyping: number = 200;
 
-  constructor(private service: ServiceService) { }
+  constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
     this.createProfessionView(this.professionPerfomed);
   }
 
   get getPageLang(): string {
-    return this.service.pageLang;
+    return this.languageService.pageLang;
   }
 
   createProfessionView = (professions: string[]): void => {
@@ -29,14 +28,16 @@ export class HeaderComponent implements OnInit {
     professions.forEach(prof => speltProfessions.push([...prof]));
 
     const speedRatio = 1.5;
-    this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex]);
-    const resetSpelling = speltProfessions[this.currentProfIndex].length * this.timeOfTyping * speedRatio;
+    let currentProfIndex = 0;
 
+    this.spellingProfesionByLetter(speltProfessions[currentProfIndex]);
+    
+    const resetSpelling = speltProfessions[currentProfIndex].length * this.timeOfTyping * speedRatio;
     setInterval(() => {
       this.displayProf = '';
-      this.currentProfIndex === professions.length - 1 ? this.currentProfIndex = 0 : this.currentProfIndex += 1;
-      this.spellingProfesionByLetter(speltProfessions[this.currentProfIndex]);
-    }, resetSpelling)
+      currentProfIndex === professions.length - 1 ? 0 : 1;
+      this.spellingProfesionByLetter(speltProfessions[currentProfIndex]);
+    }, resetSpelling);
   };
 
   spellingProfesionByLetter = (currentProf: string[]): void => {
@@ -48,6 +49,6 @@ export class HeaderComponent implements OnInit {
   };
 
   switchLang(): void{
-    this.service.switchLang();
+    this.languageService.switchLang();
   }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ServiceService } from 'src/app/services/service.service';
+import { LanguageService } from 'src/app/services/language.service';
 
 export interface MyProjects {
   name: string,
@@ -23,7 +23,7 @@ export class ProjectsComponent {
 
   constructor(
     private sanitizer: DomSanitizer,
-    private service: ServiceService
+    private languageService: LanguageService
   ) {
     this.myProjectsApi = [
       {
@@ -62,6 +62,6 @@ export class ProjectsComponent {
   }
 
   get pageLang(): string {
-    return this.service.pageLang;
+    return this.languageService.pageLang;
   }  
 }

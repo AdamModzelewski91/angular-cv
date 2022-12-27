@@ -17,6 +17,7 @@ import { ProjectsComponent } from './sections/projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { AppRoutingModule } from './app-routing.module';
+import { TestComponent } from './shared/test.component.mock';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppRoutingModule } from './app-routing.module';
     AboutComponent,
     ProjectsComponent,
     ContactComponent,
-    TooltipDirective
+    TooltipDirective,
+    TestComponent,
   ],
   imports: [
     BrowserModule,

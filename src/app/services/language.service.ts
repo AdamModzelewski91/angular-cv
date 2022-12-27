@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class LanguageService {
   pageLang: string = 'pl';
 
   constructor(public translate: TranslateService) { }
