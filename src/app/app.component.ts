@@ -1,7 +1,6 @@
 import { Component} from '@angular/core';
 import { ChildrenOutletContexts } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { of } from 'rxjs';
 import { slideInAnimation } from './animation';
 
 @Component({
@@ -13,9 +12,9 @@ import { slideInAnimation } from './animation';
   ]
 })
 export class AppComponent {
-  
+
   constructor(
-    private translate: TranslateService,   
+    private translate: TranslateService,
     private contexts: ChildrenOutletContexts,
     ) {
       this.translate.addLangs(['en', 'pl']);

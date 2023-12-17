@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:prod": "ng build --configuration production --base-href https://AdamModzelewski91.github.io/angular-cv/"
+    "build:prod": "ng build --configuration production --base-href=/angular-cv/"
   },
   "private": true,
   "dependencies": {
