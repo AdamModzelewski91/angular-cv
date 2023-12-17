@@ -8,12 +8,13 @@ import { ProjectsComponent } from "./sections/projects/projects.component";
 import { SkillsComponent } from "./sections/skills/skills.component";
 
 const routes: Routes = [
-  {path: '', component: HeaderComponent},
-  {path: 'skills', component: SkillsComponent},
-  {path: 'experience', component: ExpComponent},
-  {path: 'my-projects', component: ProjectsComponent},
-  {path: 'about-me', component: AboutComponent},
-  {path: 'contact', component: ContactComponent},
+  {path: '', component: HeaderComponent, data: { animation: 'headerPage' }},
+  {path: 'skills', component: SkillsComponent, data: { animation: 'skillsPage' }},
+  {path: 'experience', component: ExpComponent, data: { animation: 'expPage' }},
+  {path: 'my-projects', component: ProjectsComponent, data: { animation: 'myProjectsPage' }},
+  {path: 'about-me', component: AboutComponent, data: { animation: 'aboutMePage' }},
+  {path: 'contact', component: ContactComponent, data: { animation: 'contactPage' }},
+  {path: '**', redirectTo: ''},
 ];
 
 @NgModule({

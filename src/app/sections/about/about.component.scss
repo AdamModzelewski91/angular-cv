@@ -3,6 +3,8 @@
 .about {
   padding: variables.$padding;
   color: #fff;
+  background-color: variables.$bgc-dark;
+  min-height: 100vh;
 
   h1 {
     font-size: variables.$main-header;
@@ -24,12 +26,12 @@
       @include variables.breakpoint(tablet_768w) {
         float: left;
         width: 40%;
-        padding: 7px 20px 0;
+        padding: 7px 20px 0 0;
       }
 
       @include variables.breakpoint(desktop_1400w) {
         width: 30%;
-        padding: 7px 40px 0;
+        padding: 7px 40px 0 0;
       }
     }
 
@@ -39,7 +41,7 @@
 
     p {
       color: variables.$date-color;
-      font-size: variables.$list-font-size;
+      font-size: 1.8rem;
 
       @include variables.breakpoint(tablet_768w) {
         font-size: 2.2rem;

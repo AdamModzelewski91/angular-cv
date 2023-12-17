@@ -1,12 +1,6 @@
-<div>
+<div class="container" >
   <app-nav></app-nav>
-  <app-header></app-header>
-  <div class="sections">
-    <app-skills></app-skills>
-    <app-exp></app-exp>
-    <app-projects></app-projects>
-    <app-about></app-about>
+  <div [@routeAnimations]="getRouteAnimationData()">
+    <router-outlet></router-outlet>
   </div>
-  <app-contact ></app-contact>
-  <app-footer></app-footer>
 </div>

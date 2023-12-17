@@ -33,6 +33,7 @@
         color: white;
         text-transform: uppercase;
         font-size: 1.5rem;
+        display: block;
 
         @include variables.breakpoint(desktop_1400w) {
           font-size: 2rem;

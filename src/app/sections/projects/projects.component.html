@@ -1,28 +1,25 @@
 <div class="projects">
   <h1 translate>My Projects</h1>
-  <div class="wrapper">
-    <div class="project" *ngFor="let project of myProjectsApi">
-      <h2>{{ project.name }}</h2>
-      <div class="languages-view">
-        <div class="languages">
-          <h3 translate>Languages:</h3>
-          <ul>
-            <li *ngFor="let lang of project.langs; let i = index"
-              >{{ lang }}<span>{{ i < project.langs.length - 1 ? ',' : '.'}}</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div class="links">
-            <a href="{{ project.github }}" target="_blank" [tooltip]="'Go to code'" translate>GitHub
-              code</a>
-            <a href="{{ project.iframe }}" target="_blank">
-              <fa-icon [tooltip]="'Go to Web'" [icon]="faGlobe" size="1x"></fa-icon>
-            </a>
-          </div>
+  <div class="wrapper" *ngFor="let project of myProjectsApi">
+    <h2>{{ project.name }}</h2>
+    <div class="project-view">
+      <div class="project">
+        <h3 translate>Tech used:</h3>
+        <ul>
+          <li *ngFor="let lang of project.langs; let i = index"
+            >{{ lang }}<span>{{ i < project.langs.length - 1 ? ',' : '.'}}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="project">
+        <img [src]="project.iframe" [alt]="project.name">
+        <div class="links">
+          <a href="{{ project.github }}" target="_blank" [tooltip]="'Go to code'" translate>GitHub code</a>
+          <a><fa-icon [tooltip]="'Go to Web'" [icon]="faGlobe" size="1x"></fa-icon></a>
         </div>
       </div>
-      <p>{{ pageLang === 'pl' ? project.description_pl : project.description_en}}</p>
     </div>
+    <h3>Description:</h3>
+    <p>{{ pageLang === 'pl' ? project.description_pl : project.description_en}}</p>
   </div>
 </div>

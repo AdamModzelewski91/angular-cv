@@ -31,17 +31,18 @@ describe('HeaderComponent', () => {
       expect(createProfessionView).toHaveBeenCalled();
     });
   });
-  
+
   describe("getPageLang", () => {
     it("should get page lang", () => {
-      expect(component.getPageLang).toEqual('pl')
+      component.getPageLang();
+      expect(component.pageLang).toEqual('pl')
     });
   });
-  
+
   describe("createProfessionView", () => {
     it("should create view model that ll be spelling words by letter", fakeAsync(()=> {
       component.ngOnInit();
-      
+
       tick(4600);
 
       expect(component.displayProf).toEqual('Frontend Developer');

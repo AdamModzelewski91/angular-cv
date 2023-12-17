@@ -29,10 +29,17 @@ describe('SkillsComponent', () => {
       expect(component.activeClass).toEqual('DTP');
     });
 
-    it('should set currentIndex', () => {    
+    it('should set currentIndex', () => {
       expect(component.currentIndex).toEqual(1);
     });
+  });
 
+  describe("getYear", () => {
+    it("should get current year", () => {
+      const getYear = component.mainSkills;
+
+      expect(getYear).toBeDefined()
+    })
   })
 
 });

@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LanguageService } from 'src/app/services/language.service';
+import { Subject, takeUntil } from 'rxjs';
 
 export interface MyProjects {
   name: string,
-  langs: string [],
+  langs: string[],
   iframe: string,
   github: string,
   description_pl: string,
@@ -20,48 +21,30 @@ export interface MyProjects {
 export class ProjectsComponent {
   public faGlobe = faGlobe;
   public myProjectsApi!: MyProjects[];
+  pageLang!: string;
+
+  onDestroy$ = new Subject();
 
   constructor(
-    private sanitizer: DomSanitizer,
     private languageService: LanguageService
   ) {
     this.myProjectsApi = [
       {
-        name: "Cinemafinder",
-        langs: ["AngularJS", "JS", "RestAPI", "HTML", "CSS"],
-        iframe: "https://adammodzelewski91.github.io/cinemato_finder/dist/",
-        github: "https://github.com/AdamModzelewski91/cinemato_finder",
-        description_pl: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
-        description_en: "orem ipsum dolor sit amet consectetur adipisicing elit."
-      },
-      {
-        name: "Bookstore",
-        langs: ["React", "Redux", "JS", "HTML", "CSS"],
-        iframe: "https://adammodzelewski91.github.io/Bookstore/",
-        github: "https://github.com/AdamModzelewski91/Bookstore",
-        description_pl: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
-        description_en: "orem ipsum dolor sit amet consectetur adipisicing elit."
-      },
-      {
-        name: "Motonews",
-        langs: ["React", "JS", "HTML", "CSS"],
-        iframe: "https://adammodzelewski91.github.io/Motonews/",
-        github: "https://github.com/AdamModzelewski91/Motonews",
-        description_pl: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
-        description_en: "orem ipsum dolor sit amet consectetur adipisicing elit."
-      },
-      {
-        name: "CV - this project",
+        name: "Project CV",
         langs: ["Angular", "TS", "HTML", "CSS"],
-        iframe: "",
+        iframe: "../../../../assets/CV-project.png",
         github: "https://github.com/AdamModzelewski91/angular-cv",
-        description_pl: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum ea aliquam amet quos quidem molestias placeat laboriosam, perferendis illum quaerat nesciunt accusantium blanditiis quas tempora.",
-        description_en: "orem ipsum dolor sit amet consectetur adipisicing elit."
+        description_pl: "Prosta strona którą stworzyłem aby mieć w jednym miejscu CV jak i moje projekty którymi chciałbym się pochwalić.",
+        description_en: "Simple site that I made to have in one place the CV and my projects that I would like to share."
       }
     ]
   }
 
-  get pageLang(): string {
-    return this.languageService.pageLang;
-  }  
+  getPageLang(): void {
+    this.languageService.pageLang$
+    .pipe(
+      takeUntil(this.onDestroy$)
+    )
+    .subscribe((lang: string) => this.pageLang = lang)
+  }
 }

@@ -46,8 +46,7 @@ module.exports = function (config) {
     },
 
     coverageIstanbulReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-cv'),
-      include: 'src/**/!(*.spec|*.module|environment*|main|polyfills|test).(ts|js)',
+      dir: require('path').join(__dirname, './coverage/angular-cv-ist'),
       reports: ['text-summary'],
     },
 
@@ -55,14 +54,14 @@ module.exports = function (config) {
       // source files, that you wanna generate coverage for
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
-      // 'src/**/!(*.spec|*.module|environment*|main|polyfills|test).(ts|js)': ['coverage'],
+      'src/**/!(*.spec|*.module|environment*|main|polyfills|test).(ts|js)': ['coverage'],
       // 'src/app/**/*.js': ['coverage'],
     },
 
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular-cv'),
-      include: 'src/**/!(*.spec|*.module|environment*).(ts|js)',
-      exclude: 'src/(main|polyfills|test).ts',
+      dir: require('path').join(__dirname, './coverage/angular-cv-cov'),
+      // include: 'src/**/!(*.spec|*.module|environment*).(ts|js)',
+
       // dir: 'coverage/',
       // file: 'coverage.text',
       // type: 'text-summary',
@@ -71,7 +70,7 @@ module.exports = function (config) {
       // sourceStore : require('karma-coverage-istanbul-reporter').Store.create('fslookup')
     },
 
-    reporters: ['mocha',  'coverage-istanbul'],
+    reporters: ['mocha', 'coverage-istanbul', 'coverage'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,

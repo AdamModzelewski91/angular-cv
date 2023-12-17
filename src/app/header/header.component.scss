@@ -1,10 +1,11 @@
 @use '/src/variables';
 
-header {
+.header {
   position: relative;
-
+  
   @include variables.breakpoint(tablet_768w) {
-    height: 100vh;
+    overflow-y: hidden;
+    min-height: 100vh;
   }
 
   .btn-lang {
@@ -18,26 +19,27 @@ header {
     }
 
     button {
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       display: flex;
       align-items: center;
       font-weight: 600;
       background-color: transparent;
       border: none;
       color: #fff;
+      fill: #fff;
       cursor: pointer;
+
+      img {
+        width: 40px;
+        padding-right: 10px;          
+      }
 
       @include variables.breakpoint(tablet_768w) {
         top: 10vh;
-        font-size: 2rem;
-      }
-
-      fa-icon {
-        padding-right: 5px;
-        font-size: 0.5rem;
-
-        @include variables.breakpoint(tablet_768w) {
-          font-size: 0.8rem;
+        font-size: 3rem;
+      
+        img {
+          width: 50px;
         }
       }
     }
@@ -51,7 +53,7 @@ header {
     color: #fff;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2.5rem;
 
       @include variables.breakpoint(tablet_768w) {
         font-size: 3.8rem;
@@ -59,7 +61,7 @@ header {
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 2.3rem;
       font-weight: 200;
 
       @include variables.breakpoint(tablet_768w) {

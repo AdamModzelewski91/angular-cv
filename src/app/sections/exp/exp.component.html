@@ -1,59 +1,69 @@
 <section id="exp" class="experience">
   <h1 translate>Experience</h1>
   <div class="wrapper">
-    <div class="inetum">
-      <p>03/2022 - <span translate>now</span></p>
-      <h2 translate>Intern Frontend Developer at Inetum</h2>
-      <ul>
-        <li translate>Implemetation of new modules.</li>
-        <li translate>Adding logic for proper display with colaboration of old components.</li>
-        <li translate>Fixing old and new bugs that happend in process of implement.</li>
-        <li translate>Joining API with UI.</li>
-      </ul>
+    <div class="exp-switch">
+      <button (click)="switchSkills(spec)" *ngFor="let spec of myExp; let i = index"
+        ngClass="{{i===currentIndex ? 'active' : ''}}">{{spec.spec | translate}}</button>
     </div>
-    <div class="lionbridge">
-      <p>09/2019 - 02/2022</p>
-      <h2 translate>DTP Specialist at Lionbridge</h2>
-      <ul>
-        <li translate>Preparation the file to find text errors such as: bad formatting, double space, no dots, breaking
-          lines with shift-enter and etc.</li>
-        <li translate>The post-production of the file, which includes some of the steps of preparing and checking that
-          text is in proper place, has good seperators, quote marks or isn't hiding in text frames.</li>
-        <li translate>Making OCR files from none editable source into ID, AI, PS, Word, Power Point.</li>
-        <li translate>Working on multi-language files (more than 40) including Arabic, Burmese, China etc.</li>
-      </ul>
+    <div *ngIf="activeClass === 'frontEnd'">
+      <div class="inetum">
+        <h4>06/2022 - <span translate>now</span></h4>
+        <h2 translate>Junior Frontend Developer at Inetum</h2>
+        <h3 translate>santader project</h3>
+        <p translate>Junior exp.</p>
+      </div>
+      <div class="inetum">
+        <h4>03/2022 - 06/2022</h4>
+        <h2 translate>Intern Frontend Developer at Inetum</h2>
+        <h3 translate>realdolmen project</h3>
+        <p translate>Intern exp.</p>
+      </div>
     </div>
-    <div class="designature">
-      <p>09/2019 - 01/2019</p>
-      <h2 translate>DTP operator at Deisgnature</h2>
-      <ul>
-        <li translate>Multiply acepted projects on diffrent flavoures/grids.</li>
-        <li translate>Visual and technical proces of image (Photoshop).</li>
-        <li translate>Creating product visualizations (packshots, mockups).</li>
-        <li translate>Working with customer product specycifation.</li>
-        <li translate>Preparing print file with printhouse specyfication.</li>
-      </ul>
-    </div>
-    <div class="mlekovitaSpec">
-      <p>02/2017 - 07/2018</p>
-      <h2 translate>Marketing Specialist at SM Mlekovita</h2>
-      <ul>
-        <li translate>Creating graphic designs and preparing them for print.</li>
-        <li translate>Coordinating the proces acceptation of soft-proofs and proofs.</li>
-        <li translate>Coordinating the proces of implentation of change on mark products such as: Jeronimo and Lidl.
-        </li>
-        <li translate>Creating product visualizations (packshots, mockups).</li>
-      </ul>
-    </div>
-    <div class="mlekovitaRef">
-      <p>08/2015 - 02/2017</p>
-      <h2 translate>Marketing Referent - Graphic Designer at SM Mlekovita</h2>
-      <ul>
-        <li translate>Helping with documentation of projects.</li>
-        <li translate>Implentation of change on existed products.</li>
-        <li translate>Creating graphic designs.</li>
-        <li translate>Making product photos for catalogs or leaflets.</li>
-      </ul>
+    <div *ngIf="activeClass === 'DTP'">
+      <div class="lionbridge">
+        <h4>09/2019 - 02/2022</h4>
+        <h2 translate>DTP Specialist at Lionbridge</h2>
+        <ul>
+          <li translate>Preparation the file to find text errors such as: bad formatting, double space, no dots, breaking
+            lines with shift-enter and etc.</li>
+          <li translate>The post-production of the file, which includes some of the steps of preparing and checking that
+            text is in proper place, has good seperators, quote marks or isn't hiding in text frames.</li>
+          <li translate>Making OCR files from none editable source into ID, AI, PS, Word, Power Point.</li>
+          <li translate>Working on multi-language files (more than 40) including Arabic, Burmese, China etc.</li>
+        </ul>
+      </div>
+      <div class="designature">
+        <h4>09/2019 - 01/2019</h4>
+        <h2 translate>DTP operator at Deisgnature</h2>
+        <ul>
+          <li translate>Multiply acepted projects on diffrent flavoures/grids.</li>
+          <li translate>Visual and technical proces of image (Photoshop).</li>
+          <li translate>Creating product visualizations (packshots, mockups).</li>
+          <li translate>Working with customer product specycifation.</li>
+          <li translate>Preparing print file with printhouse specyfication.</li>
+        </ul>
+      </div>
+      <div class="mlekovitaSpec">
+        <h4>02/2017 - 07/2018</h4>
+        <h2 translate>Marketing Specialist at SM Mlekovita</h2>
+        <ul>
+          <li translate>Creating graphic designs and preparing them for print.</li>
+          <li translate>Coordinating the proces acceptation of soft-proofs and proofs.</li>
+          <li translate>Coordinating the proces of implentation of change on mark products such as: Jeronimo and Lidl.
+          </li>
+          <li translate>Creating product visualizations (packshots, mockups).</li>
+        </ul>
+      </div>
+      <div class="mlekovitaRef">
+        <h4>08/2015 - 02/2017</h4>
+        <h2 translate>Marketing Referent - Graphic Designer at SM Mlekovita</h2>
+        <ul>
+          <li translate>Helping with documentation of projects.</li>
+          <li translate>Implentation of change on existed products.</li>
+          <li translate>Creating graphic designs.</li>
+          <li translate>Making product photos for catalogs or leaflets.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>

@@ -4,11 +4,12 @@ import { Directive, ElementRef, HostListener, Input, OnDestroy } from '@angular/
   selector: '[tooltip]'
 })
 export class TooltipDirective implements OnDestroy {
+  @Input() tooltip = '';
 
-  @Input() tooltip = ''; 
   delay? = 190; 
 
-  myPopup: any;
+  myPopup!: HTMLElement;
+
   timer!: number;
 
   constructor(private el: ElementRef) { }

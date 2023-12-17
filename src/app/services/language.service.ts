@@ -1,16 +1,47 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject, take } from 'rxjs';
+
+export enum PageLang {
+  PL = 'pl',
+  EN = 'en',
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class LanguageService {
-  pageLang: string = 'pl';
+  pageLangSubject$ = new BehaviorSubject(PageLang.PL);
 
-  constructor(public translate: TranslateService) { }
+  pageLang$ = this.pageLangSubject$.asObservable();
+
+  constructor(private translate: TranslateService) {
+    this.getLangInLocalStorage();
+   }
 
   switchLang(): void {
-    this.translate.use(this.pageLang);
-    this.pageLang === 'pl' ? this.pageLang = 'en' : this.pageLang = 'pl';
+    const pageLang = this.pageLangSubject$.getValue();
+    this.translate.use(pageLang);
+
+    if (pageLang === PageLang.PL) {
+      this.pageLangSubject$.next(PageLang.EN);
+    } else {
+      this.pageLangSubject$.next(PageLang.PL);
+    }
+    this.putLangInLocalStorage();
+  }
+
+  putLangInLocalStorage(): void {
+    this.pageLang$.pipe(take(1)).subscribe(lang => {
+      localStorage.setItem('cvLang', lang);
+    })
+  }
+
+  getLangInLocalStorage(): void {
+    const cvLang = localStorage.getItem('cvLang') === 'pl' ? PageLang.EN : PageLang.PL;
+    if (cvLang) {
+      this.pageLangSubject$.next(cvLang);
+      this.switchLang();
+    }
   }
 }

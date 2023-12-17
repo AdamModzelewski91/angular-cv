@@ -1,6 +1,7 @@
+import { InjectionToken, Injector } from "@angular/core";
 import { TestBed } from "@angular/core/testing";
-import { TranslateModule, TranslateService } from "@ngx-translate/core";
-import { NavComponent } from "../nav/nav.component";
+import { MissingTranslationHandler, TranslateCompiler, TranslateLoader, TranslateModule, TranslateParser, TranslateService, TranslateStore, USE_DEFAULT_LANG } from "@ngx-translate/core";
+
 import { LanguageService } from "./language.service"
 
 describe("LanguageService", () => {
@@ -8,12 +9,9 @@ describe("LanguageService", () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [NavComponent],
-      imports: [TranslateModule.forRoot(),],
-      providers: [ LanguageService, TranslateService ],
-    }).compileComponents();
+      providers: [ LanguageService, TranslateService, TranslateStore, TranslateLoader, TranslateCompiler, TranslateParser, MissingTranslationHandler ],
+    });
     service = TestBed.inject(LanguageService);
-
   })
 
   describe("switchLang", () => {
@@ -22,7 +20,8 @@ describe("LanguageService", () => {
     });
 
     it("should change button text from pl to en", ()=> {
-      expect(service.pageLang).toEqual('en')
+      expect(service.pageLangSubject$.value).toEqual('en')
+
     });
   });
 })

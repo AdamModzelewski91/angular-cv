@@ -1,9 +1,0 @@
-@use '../variables';
-
-.sections> {
-  div {
-    &:nth-child(even) {
-      background-color: variables.$bgc-dark;
-    }
-  }
-}

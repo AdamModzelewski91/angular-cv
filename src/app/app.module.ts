@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core'
@@ -17,7 +18,7 @@ import { ProjectsComponent } from './sections/projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { TooltipDirective } from './directives/tooltip.directive';
 import { AppRoutingModule } from './app-routing.module';
-import { TestComponent } from './shared/test.component.mock';
+import { TestComponent } from './mocks/test.component.mock';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TestComponent } from './shared/test.component.mock';
     FontAwesomeModule,
     HttpClientModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -1,6 +1,6 @@
 import { ComponentFixture, fakeAsync, TestBed, tick, flush } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { TestComponent } from '../shared/test.component.mock';
+import { TestComponent } from '../mocks/test.component.mock';
 import { TooltipDirective } from "./tooltip.directive";
 
 describe("TooltipDirective", () => {
@@ -19,7 +19,7 @@ describe("TooltipDirective", () => {
       const tooltip = fixture.debugElement.queryAll(By.directive(TooltipDirective));
       expect(tooltip.length).toBe(2);
     })
-
+  
   it("should create Tooltip for 5 sec", fakeAsync(()=> {
     const button = fixture.debugElement.query(By.directive(TooltipDirective));
     const mouseenter = new MouseEvent('mouseenter');
@@ -48,4 +48,5 @@ describe("TooltipDirective", () => {
     expect(document.querySelector('.tooltip-container')).toBeFalsy();
     flush();
   }));
+  
 })
