@@ -44,7 +44,7 @@ import { TestComponent } from './mocks/test.component.mock';
       loader: {
         provide: TranslateLoader,
         useFactory: httpTranslateLoader,
-        deps: [HttpClient]
+        deps: [HttpClient],
       }
     })
   ],
@@ -54,5 +54,5 @@ import { TestComponent } from './mocks/test.component.mock';
 export class AppModule { }
 
 export function httpTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
