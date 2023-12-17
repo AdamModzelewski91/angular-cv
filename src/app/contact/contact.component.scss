@@ -1,15 +1,15 @@
-@use '/src/variables';
+@import 'variables';
 
 .contact {
-  padding: variables.$padding;
-  color: variables.$bgc-dark;
+  padding: $padding;
+  color: $bgc-dark;
 
   h1 {
-    font-size: variables.$main-header;
+    font-size: $main-header;
     text-align: center;
     padding-bottom: 15px;
 
-    @include variables.breakpoint(tablet_768w) {
+    @include breakpoint(tablet_768w) {
       font-size: 4rem;
     }
   }
@@ -21,7 +21,7 @@
     .info {
       display: flex;
       align-items: center;
-      padding-bottom: variables.$padding-20;
+      padding-bottom: $padding-20;
       width: 400px;
 
       fa-icon {
@@ -30,23 +30,23 @@
 
       h2,
       a {
-        font-size: variables.$header-font-size;
+        font-size: $header-font-size;
 
-        @include variables.breakpoint(tablet_768w) {
+        @include breakpoint(tablet_768w) {
           font-size: 2.5rem;
         }
       }
 
       a {
         text-decoration: none;
-        color: variables.$bgc-dark;
+        color: $bgc-dark;
         font-weight: 600;
       }
 
       p {
-        font-size: variables.$list-font-size;
+        font-size: $list-font-size;
 
-        @include variables.breakpoint(tablet_768w) {
+        @include breakpoint(tablet_768w) {
           font-size: 2rem;
         }
       }

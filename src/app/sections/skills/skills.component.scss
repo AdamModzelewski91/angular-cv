@@ -1,16 +1,16 @@
-@use '../../../variables';
+@import 'variables';
 
 .skills {
-  padding: variables.$padding;
-  color: variables.$bgc-dark;
+  padding: $padding;
+  color: $bgc-dark;
   min-height: 80vh;
 
   h1 {
-    font-size: variables.$main-header;
+    font-size: $main-header;
     text-align: center;
     padding-bottom: 15px;
 
-    @include variables.breakpoint(tablet_768w) {
+    @include breakpoint(tablet_768w) {
       font-size: 4rem;
     }
   }
@@ -27,56 +27,56 @@
         width: 100px;
         font-size: 1.2rem;
         color: #fff;
-        background-color: variables.$bgc-dark;
+        background-color: $bgc-dark;
         border: none;
         margin: 0 10px;
         cursor: pointer;
         transition: 0.2s;
 
-        @include variables.breakpoint(tablet_768w) {
+        @include breakpoint(tablet_768w) {
           font-size: 2rem;
         }
       }
 
       button:hover {
-        background-color: lighten($color: variables.$bgc-dark, $amount: 20);
-        box-shadow: 0 0 5px variables.$bgc-dark;
+        background-color: lighten($color: $bgc-dark, $amount: 20);
+        box-shadow: 0 0 5px $bgc-dark;
       }
 
       .active {
-        background-color: variables.$header-color;
+        background-color: $header-color;
       }
 
       .active:hover {
-        background-color: darken($color: variables.$header-color, $amount: 5);
+        background-color: darken($color: $header-color, $amount: 5);
       }
     }
 
     div {
-      padding-bottom: variables.$padding-20;
+      padding-bottom: $padding-20;
     }
 
     h2 {
-      font-size: variables.$header-font-size;
-      color: variables.$header-color;
-      padding-bottom: variables.$header-padding;
+      font-size: $header-font-size;
+      color: $header-color;
+      padding-bottom: $header-padding;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2.3rem;
       }
     }
 
     li {
-      font-size: variables.$list-font-size;
-      padding-left: variables.$list-padding-left;
-      padding-bottom: variables.$list-padding-bot;
+      font-size: $list-font-size;
+      padding-left: $list-padding-left;
+      padding-bottom: $list-padding-bot;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2rem;
       }
 
       span {
-        @include variables.breakpoint(tablet_768w) {
+        @include breakpoint(tablet_768w) {
           font-size: 2rem;
         }
       }
@@ -89,11 +89,11 @@
       img {
         max-height: 40px;
 
-        @include variables.breakpoint(tablet_768w) {
+        @include breakpoint(tablet_768w) {
           max-height: 60px;
         }
 
-        @include variables.breakpoint(desktop_1400w) {
+        @include breakpoint(desktop_1400w) {
           max-height: 80px;
         }
       }

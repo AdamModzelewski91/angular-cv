@@ -1,17 +1,17 @@
-@use '../../../variables';
+@import 'variables';
 
 .about {
-  padding: variables.$padding;
+  padding: $padding;
   color: #fff;
-  background-color: variables.$bgc-dark;
+  background-color: $bgc-dark;
   min-height: 100vh;
 
   h1 {
-    font-size: variables.$main-header;
+    font-size: $main-header;
     text-align: center;
     padding-bottom: 15px;
 
-    @include variables.breakpoint(tablet_768w) {
+    @include breakpoint(tablet_768w) {
       font-size: 4rem;
     }
   }
@@ -23,31 +23,31 @@
     img {
       width: 100%;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         float: left;
         width: 40%;
         padding: 7px 20px 0 0;
       }
 
-      @include variables.breakpoint(desktop_1400w) {
+      @include breakpoint(desktop_1400w) {
         width: 30%;
         padding: 7px 40px 0 0;
       }
     }
 
     div {
-      padding-bottom: variables.$padding-20;
+      padding-bottom: $padding-20;
     }
 
     p {
-      color: variables.$date-color;
+      color: $date-color;
       font-size: 1.8rem;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2.2rem;
       }
 
-      @include variables.breakpoint(desktop_1400w) {
+      @include breakpoint(desktop_1400w) {
         font-size: 3rem;
       }
     }

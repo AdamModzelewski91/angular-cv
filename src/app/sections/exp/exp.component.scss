@@ -1,21 +1,21 @@
-@use '../../../variables';
+@import 'variables';
 
 .experience {
-  padding: variables.$padding;
+  padding: $padding;
   color: #fff;
-  background-color: variables.$bgc-dark;
+  background-color: $bgc-dark;
 
-  @include variables.breakpoint(tablet_768w) {
+  @include breakpoint(tablet_768w) {
     min-height: 100vh;
   }
 
 
   h1 {
-    font-size: variables.$main-header;
+    font-size: $main-header;
     text-align: center;
     padding-bottom: 15px;
 
-    @include variables.breakpoint(tablet_768w) {
+    @include breakpoint(tablet_768w) {
       font-size: 4rem;
     }
   }
@@ -34,42 +34,42 @@
         width: 100px;
         font-size: 1.2rem;
         color: #fff;
-        background-color: variables.$bgc-light-dark;
+        background-color: $bgc-light-dark;
         border: none;
         margin: 0 10px;
         cursor: pointer;
         transition: 0.2s;
 
-        @include variables.breakpoint(tablet_768w) {
+        @include breakpoint(tablet_768w) {
           font-size: 2rem;
         }
       }
 
       button:hover {
-        background-color: lighten($color: variables.$bgc-dark, $amount: 20);
-        box-shadow: 0 0 5px variables.$bgc-dark;
+        background-color: lighten($color: $bgc-dark, $amount: 20);
+        box-shadow: 0 0 5px $bgc-dark;
       }
 
       .active {
-        background-color: variables.$header-color;
+        background-color: $header-color;
       }
 
       .active:hover {
-        background-color: darken($color: variables.$header-color, $amount: 5);
+        background-color: darken($color: $header-color, $amount: 5);
       }
     }
 
 
     div {
-      padding-bottom: variables.$padding-20;
+      padding-bottom: $padding-20;
     }
 
     h2 {
-      font-size: variables.$header-font-size;
-      color: variables.$header-color;
-      padding-bottom: variables.$header-padding;
+      font-size: $header-font-size;
+      color: $header-color;
+      padding-bottom: $header-padding;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2.3rem;
       }
     }
@@ -82,10 +82,10 @@
 
     h4,
     span {
-      color: variables.$date-color;
+      color: $date-color;
       text-transform: uppercase;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 1.5rem;
       }
     }
@@ -95,17 +95,17 @@
       color: rgb(189, 189, 189);
       padding-left: 20px;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2.3rem;
       }
     }
 
     li {
-      font-size: variables.$list-font-size;
-      padding-left: variables.$list-padding-left;
-      padding-bottom: variables.$list-padding-bot;
+      font-size: $list-font-size;
+      padding-left: $list-padding-left;
+      padding-bottom: $list-padding-bot;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
 
         font-size: 2rem;
       }

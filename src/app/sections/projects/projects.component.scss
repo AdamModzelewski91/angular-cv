@@ -1,15 +1,15 @@
-@use '../../../variables';
+@import 'variables';
 
 .projects {
-  padding: variables.$padding;
-  color: variables.$bgc-dark;
+  padding: $padding;
+  color: $bgc-dark;
 
   h1 {
-    font-size: variables.$main-header;
+    font-size: $main-header;
     text-align: center;
     padding-bottom: 15px;
 
-    @include variables.breakpoint(tablet_768w) {
+    @include breakpoint(tablet_768w) {
       font-size: 4rem;
     }
   }
@@ -22,7 +22,7 @@
       padding-bottom: 0;
       max-width: 100%;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         flex-direction: row;
       }
     }
@@ -30,7 +30,7 @@
     div {
       flex-grow: 1;
       min-width: 200px;
-      padding-bottom: variables.$padding-20;
+      padding-bottom: $padding-20;
     }
 
     img {
@@ -38,40 +38,40 @@
     }
 
     h2 {
-      font-size: variables.$header-font-size;
-      color: variables.$header-color;
-      padding-bottom: variables.$padding-20;
+      font-size: $header-font-size;
+      color: $header-color;
+      padding-bottom: $padding-20;
       text-align: center;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2.5rem;
       }
     }
 
     h3 {
-      font-size: variables.$h3-font-size;
-      color: variables.$bgc-dark;
-      padding-bottom: variables.$header-padding;
+      font-size: $h3-font-size;
+      color: $bgc-dark;
+      padding-bottom: $header-padding;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2.3rem;
       }
     }
 
     p {
-      color: variables.$bgc-dark;
-      font-size: variables.$paragraph-font-size;
+      color: $bgc-dark;
+      font-size: $paragraph-font-size;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 1.8rem;
       }
     }
 
     a {
-      font-size: variables.$h3-font-size;
+      font-size: $h3-font-size;
       text-decoration: none;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 1.8rem;
       }
     }
@@ -79,25 +79,25 @@
     ul {
       display: flex;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         display: inline;
       }
     }
 
     li {
-      font-size: variables.$list-font-size;
-      padding-left: variables.$list-padding-left;
-      padding-bottom: variables.$list-padding-bot;
-      color: variables.$bgc-light-dark;
+      font-size: $list-font-size;
+      padding-left: $list-padding-left;
+      padding-bottom: $list-padding-bot;
+      color: $bgc-light-dark;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2rem;
       }
     }
 
     span{
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 2rem;
       }
     }
@@ -106,7 +106,7 @@
       padding-bottom: 0;
       text-align: right;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 1.5rem;
       }
 

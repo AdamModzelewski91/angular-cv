@@ -1,9 +1,9 @@
-@use '/src/variables';
+@import 'variables';
 
 .header {
   position: relative;
-  
-  @include variables.breakpoint(tablet_768w) {
+
+  @include breakpoint(tablet_768w) {
     overflow-y: hidden;
     min-height: 100vh;
   }
@@ -14,7 +14,7 @@
     left: 5vw;
     top: 2vw;
 
-    @include variables.breakpoint(tablet_768w) {
+    @include breakpoint(tablet_768w) {
       top: 7vw;
     }
 
@@ -31,13 +31,13 @@
 
       img {
         width: 40px;
-        padding-right: 10px;          
+        padding-right: 10px;
       }
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         top: 10vh;
         font-size: 3rem;
-      
+
         img {
           width: 50px;
         }
@@ -55,7 +55,7 @@
     h1 {
       font-size: 2.5rem;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 3.8rem;
       }
     }
@@ -64,7 +64,7 @@
       font-size: 2.3rem;
       font-weight: 200;
 
-      @include variables.breakpoint(tablet_768w) {
+      @include breakpoint(tablet_768w) {
         font-size: 3.5rem;
         line-height: 4.5rem;
       }
@@ -74,7 +74,7 @@
         font-weight: 400;
         animation: cursorBlink 0.8s infinite ease-in-out;
 
-        @include variables.breakpoint(tablet_768w) {
+        @include breakpoint(tablet_768w) {
           font-size: 3.5rem;
         }
       }
@@ -85,7 +85,7 @@
     width: 100%;
     position: relative;
 
-    @include variables.breakpoint(tablet_768w) {
+    @include breakpoint(tablet_768w) {
       height: 100vh;
       object-fit: cover;
     }

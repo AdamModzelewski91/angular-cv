@@ -32,7 +32,7 @@ export class ProjectsComponent {
       {
         name: "Project CV",
         langs: ["Angular", "TS", "HTML", "CSS"],
-        iframe: "../../../../assets/CV-project.png",
+        iframe: "./assets/CV-project.png",
         github: "https://github.com/AdamModzelewski91/angular-cv",
         description_pl: "Prosta strona którą stworzyłem aby mieć w jednym miejscu CV jak i moje projekty którymi chciałbym się pochwalić.",
         description_en: "Simple site that I made to have in one place the CV and my projects that I would like to share."
