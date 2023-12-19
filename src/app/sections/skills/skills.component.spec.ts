@@ -1,6 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TranslateService } from '@ngx-translate/core';
 import { LanguageService } from 'src/app/services/language.service';
 
 import { SkillsComponent } from './skills.component';
@@ -34,11 +33,11 @@ describe('SkillsComponent', () => {
     });
   });
 
-  describe("getYear", () => {
-    it("should get current year", () => {
-      const getYear = component.mainSkills;
+  describe("ngOnInit", () => {
+    it("should set main Skills", () => {
+      component.ngOnInit();
 
-      expect(getYear).toBeDefined()
+      expect(component.mainSkills).toBeDefined()
     })
   })
 

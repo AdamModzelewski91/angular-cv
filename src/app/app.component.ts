@@ -21,7 +21,7 @@ export class AppComponent {
       this.translate.setDefaultLang('en');
     }
 
-    getRouteAnimationData() {
-      return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
-    }
+  getRouteAnimationData() {
+    return this.contexts.getContext('primary')?.route?.snapshot?.data?.['animation'];
+  }
 }

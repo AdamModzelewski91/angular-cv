@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { LanguageService } from 'src/app/services/language.service';
+import { Component, OnInit } from '@angular/core';
 
 export interface SkillSpec {
   id: number,
@@ -13,20 +12,20 @@ export interface SkillSpec {
   styleUrls: ['./skills.component.scss'],
 })
 
-export class SkillsComponent {
-  mainSkills: SkillSpec[];
+export class SkillsComponent implements OnInit {
+  mainSkills!: SkillSpec[];
   currentIndex: number = 0;
   activeClass: string = 'frontEnd';
 
-  constructor(private languageService: LanguageService) {
+  ngOnInit(): void {
     this.mainSkills = [
       { id: 1, spec: 'Frontend', className: 'frontEnd' },
       { id: 2, spec: 'DTP', className: 'DTP' },
       { id: 3, spec: 'Soft', className: 'softSkills' },
-    ]
+    ];
   }
 
-  switchSkills(skills: SkillSpec) {
+  switchSkills(skills: SkillSpec): void {
     this.currentIndex = skills.id - 1;
     this.activeClass = skills.className;
   }

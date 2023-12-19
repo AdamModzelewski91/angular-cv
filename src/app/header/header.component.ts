@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { faRepeat } from '@fortawesome/free-solid-svg-icons';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject } from 'rxjs';
 import { LanguageService } from '../services/language.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   professionPerfomed: string[] = ['Frontend Developer', 'DTP Operator'];
   displayProf: string = '';
   timeOfTyping: number = 200;
-  pageLang: string = 'pl';
+  pageLang$ = this.languageService.pageLang$;
 
   onDestroy$ = new Subject<void>();
 
@@ -23,16 +23,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   constructor(private languageService: LanguageService) { }
 
   ngOnInit(): void {
-    this.getPageLang();
     this.createProfessionView(this.professionPerfomed);
-  }
-
-  getPageLang(): void {
-    this.languageService.pageLang$
-      .pipe(
-        takeUntil(this.onDestroy$)
-      )
-      .subscribe((lang: string) => this.pageLang = lang)
   }
 
   createProfessionView = (professions: string[]): void => {

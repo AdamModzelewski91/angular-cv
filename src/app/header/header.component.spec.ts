@@ -32,13 +32,6 @@ describe('HeaderComponent', () => {
     });
   });
 
-  describe("getPageLang", () => {
-    it("should get page lang", () => {
-      component.getPageLang();
-      expect(component.pageLang).toEqual('pl')
-    });
-  });
-
   describe("createProfessionView", () => {
     it("should create view model that ll be spelling words by letter", fakeAsync(()=> {
       component.ngOnInit();

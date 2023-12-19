@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-about',
@@ -7,5 +6,4 @@ import { LanguageService } from 'src/app/services/language.service';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
-  constructor(private languageService: LanguageService) {}
 }

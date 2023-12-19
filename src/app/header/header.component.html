@@ -2,7 +2,7 @@
   <div class="btn-lang">
     <button (click)="switchLang()" class="switch-btn">
       <img src="assets/svg/lang.svg" alt="lang">
-      {{ pageLang | uppercase }}
+      {{ pageLang$ | async | uppercase }}
     </button>
   </div>
   <div class="head">

@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { LanguageService } from 'src/app/services/language.service';
+import { Component, OnInit } from '@angular/core';
 import { SkillSpec } from '../skills/skills.component';
 
 @Component({
@@ -7,12 +6,12 @@ import { SkillSpec } from '../skills/skills.component';
   templateUrl: './exp.component.html',
   styleUrls: ['./exp.component.scss']
 })
-export class ExpComponent {
-  myExp: SkillSpec[];
+export class ExpComponent implements OnInit{
+  myExp!: SkillSpec[];
   currentIndex: number = 0;
   activeClass: string = 'frontEnd';
 
-  constructor(private languageService: LanguageService) {
+  ngOnInit() {
     this.myExp = [
       { id: 1, spec: 'Frontend', className: 'frontEnd' },
       { id: 2, spec: 'DTP', className: 'DTP' },

@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { DomSanitizer } from '@angular/platform-browser';
 import { LanguageService } from 'src/app/services/language.service';
-import { Subject, takeUntil } from 'rxjs';
 
 export interface MyProjects {
   name: string,
@@ -18,16 +16,14 @@ export interface MyProjects {
   styleUrls: ['./projects.component.scss']
 })
 
-export class ProjectsComponent {
-  public faGlobe = faGlobe;
-  public myProjectsApi!: MyProjects[];
-  pageLang!: string;
+export class ProjectsComponent implements OnInit{
+  faGlobe = faGlobe;
+  myProjectsApi!: MyProjects[];
+  pageLang$ = this.languageService.pageLang$;
 
-  onDestroy$ = new Subject();
+  constructor(private languageService: LanguageService) {}
 
-  constructor(
-    private languageService: LanguageService
-  ) {
+  ngOnInit(): void {
     this.myProjectsApi = [
       {
         name: "Project CV",
@@ -38,13 +34,5 @@ export class ProjectsComponent {
         description_en: "Simple site that I made to have in one place the CV and my projects that I would like to share."
       }
     ]
-  }
-
-  getPageLang(): void {
-    this.languageService.pageLang$
-    .pipe(
-      takeUntil(this.onDestroy$)
-    )
-    .subscribe((lang: string) => this.pageLang = lang)
   }
 }

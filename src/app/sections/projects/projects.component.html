@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <h3>Description:</h3>
-    <p>{{ pageLang === 'pl' ? project.description_pl : project.description_en}}</p>
+    <h3><span translate>Description</span>:</h3>
+      <p>{{ (pageLang$ | async) !== 'pl' ? project.description_pl : project.description_en}}</p>
   </div>
 </div>
